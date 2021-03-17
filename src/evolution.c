@@ -246,6 +246,30 @@ u16 GetEvolutionTargetSpecies(struct Pokemon* mon, u8 type, u16 evolutionItem)
 					#endif
 					break;
 
+				case EVO_NATURE_HIGH:
+					u8 highNatures[] = { NATURE_ADAMANT, NATURE_BRAVE, NATURE_DOCILE, NATURE_HARDY, NATURE_HASTY, NATURE_IMPISH, NATURE_JOLLY, NATURE_LAX, NATURE_NAIVE, NATURE_NAUGHTY, NATURE_RASH, NATURE_QUIRKY, NATURE_SASSY };
+					for(j = 0; j < ( sizeof(highNatures) / sizeof(highNatures[0]) ); ++j)
+					{
+						if ( GetNature(mon) == highNatures[j] && gEvolutionTable[species][i].param <= level )
+						{
+							targetSpecies = gEvolutionTable[species][i].targetSpecies;
+							break;
+						}
+					}
+					break;
+
+				case EVO_NATURE_LOW:
+					u8 lowNatures[] = { NATURE_BASHFUL, NATURE_BOLD, NATURE_CALM, NATURE_CAREFUL, NATURE_GENTLE, NATURE_LONELY, NATURE_MILD, NATURE_MODEST, NATURE_QUIET, NATURE_RELAXED, NATURE_SERIOUS, NATURE_TIMID };
+					for(j = 0; j < ( sizeof(lowNatures) / sizeof(lowNatures[0]) ); ++j)
+					{
+						if ( GetNature(mon) == lowNatures[j] && gEvolutionTable[species][i].param <= level )
+						{
+							targetSpecies = gEvolutionTable[species][i].targetSpecies;
+							break;
+						}
+					}
+					break;
+
 				case EVO_FLAG_SET:
 					if (FlagGet(gEvolutionTable[species][i].param))
 						targetSpecies = gEvolutionTable[species][i].targetSpecies;
