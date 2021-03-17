@@ -26,6 +26,7 @@ u16 GetEvolutionTargetSpecies(struct Pokemon* mon, u8 type, u16 evolutionItem)
 	u8 level;
 	u16 friendship;
 	u8 beauty = mon->beauty;
+	u8 nature = GetNature(mon);
 	u16 upperPersonality = personality >> 16;
 	u8 holdEffect = ItemId_GetHoldEffect(heldItem);
 
@@ -247,27 +248,44 @@ u16 GetEvolutionTargetSpecies(struct Pokemon* mon, u8 type, u16 evolutionItem)
 					break;
 
 				case EVO_NATURE_HIGH:
-					u8 highNatures[] = { NATURE_ADAMANT, NATURE_BRAVE, NATURE_DOCILE, NATURE_HARDY, NATURE_HASTY, NATURE_IMPISH, NATURE_JOLLY, NATURE_LAX, NATURE_NAIVE, NATURE_NAUGHTY, NATURE_RASH, NATURE_QUIRKY, NATURE_SASSY };
-					for(j = 0; j < ( sizeof(highNatures) / sizeof(highNatures[0]) ); ++j)
+					if( gEvolutionTable[species][i].param <= level &&
+						( nature == NATURE_ADAMANT ||
+						  nature == NATURE_BRAVE ||
+						  nature == NATURE_DOCILE ||
+						  nature == NATURE_HARDY ||
+						  nature == NATURE_HASTY ||
+						  nature == NATURE_IMPISH ||
+						  nature == NATURE_JOLLY ||
+						  nature == NATURE_LAX ||
+						  nature == NATURE_NAIVE ||
+						  nature == NATURE_NAUGHTY ||
+						  nature == NATURE_RASH ||
+						  nature == NATURE_QUIRKY ||
+						  nature == NATURE_SASSY ))
 					{
-						if ( GetNature(mon) == highNatures[j] && gEvolutionTable[species][i].param <= level )
-						{
-							targetSpecies = gEvolutionTable[species][i].targetSpecies;
-							break;
-						}
+						targetSpecies = gEvolutionTable[species][i].targetSpecies;
 					}
+					
 					break;
 
 				case EVO_NATURE_LOW:
-					u8 lowNatures[] = { NATURE_BASHFUL, NATURE_BOLD, NATURE_CALM, NATURE_CAREFUL, NATURE_GENTLE, NATURE_LONELY, NATURE_MILD, NATURE_MODEST, NATURE_QUIET, NATURE_RELAXED, NATURE_SERIOUS, NATURE_TIMID };
-					for(j = 0; j < ( sizeof(lowNatures) / sizeof(lowNatures[0]) ); ++j)
+					if( gEvolutionTable[species][i].param <= level &&
+						( nature == NATURE_BASHFUL ||
+						  nature == NATURE_BOLD ||
+						  nature == NATURE_CALM ||
+						  nature == NATURE_CAREFUL ||
+						  nature == NATURE_GENTLE ||
+						  nature == NATURE_LONELY ||
+						  nature == NATURE_MILD ||
+						  nature == NATURE_MODEST ||
+						  nature == NATURE_QUIET ||
+						  nature == NATURE_RELAXED ||
+						  nature == NATURE_SERIOUS ||
+						  nature == NATURE_TIMID ))
 					{
-						if ( GetNature(mon) == lowNatures[j] && gEvolutionTable[species][i].param <= level )
-						{
-							targetSpecies = gEvolutionTable[species][i].targetSpecies;
-							break;
-						}
+						targetSpecies = gEvolutionTable[species][i].targetSpecies;
 					}
+					
 					break;
 
 				case EVO_FLAG_SET:
