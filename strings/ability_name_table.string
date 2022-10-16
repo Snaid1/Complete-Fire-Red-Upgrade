@@ -225,7 +225,7 @@ Vital Spirit
 White Smoke
 
 #org @NAME_NEUTRALISING_GAS
-Neutralize Gas
+NeutrlzngGas
 
 #org @NAME_SHELL_ARMOR
 Shell Armor
@@ -495,7 +495,7 @@ SteelySpirit
 Perish Body
 
 #org @NAME_WANDERING_SPIRIT
-Wandering Soul
+Wandrng Soul
 
 #org @NAME_POWER_CONSTRUCT
 PwrConstruct
@@ -537,7 +537,7 @@ Triage
 Water Bubble
 
 #org @NAME_WATER_COMPACTION
-Water Compact
+WaterCompact
 
 #org @NAME_STALL
 Stall
@@ -660,7 +660,7 @@ Long Reach
 Liquid Voice
 
 #org @NAME_QUEENLY_MAJESTY
-Queenly Majesty
+QueenMajesty
 
 #org @NAME_INNARDS_OUT
 Innards Out
@@ -708,7 +708,7 @@ Battery
 Receiver
 
 #org @NAME_POWER_OF_ALCHEMY
-Alchemic Power
+Alchemic Pwr
 
 #org @NAME_NEUROFORCE
 Neuroforce
