@@ -19,6 +19,62 @@ tables to edit:
 
 #ifndef UNBOUND //Modify this section
 
+static const struct WildPokemon gRoute1_LandMonsNight[] =
+{
+	{2, 2, SPECIES_HOOTHOOT},
+	{2, 2, SPECIES_RATTATA},
+	{3, 3, SPECIES_RATTATA},
+	{3, 3, SPECIES_HOOTHOOT},
+	{3, 3, SPECIES_RATTATA},
+	{3, 3, SPECIES_HOOTHOOT},
+	{4, 4, SPECIES_RATTATA},
+	{4, 4, SPECIES_HOOTHOOT},
+	{3, 3, SPECIES_RATTATA},
+	{4, 4, SPECIES_RATTATA},
+	{5, 5, SPECIES_RATTATA},
+	{6, 6, SPECIES_RATTATA},
+};
+
+static const struct WildPokemonInfo gRoute1_LandMonsInfoNight = {21, gRoute1_LandMonsNight};
+
+static const struct WildPokemon gRoute2_LandMonsNight[] =
+{
+	{2, 2, SPECIES_HOOTHOOT},
+	{3, 3, SPECIES_WEEDLE},
+	{3, 3, SPECIES_SPINARAK},
+	{3, 3, SPECIES_HOOTHOOT},
+	{4, 4, SPECIES_SPINARAK},
+	{3, 3, SPECIES_HOOTHOOT},
+	{4, 4, SPECIES_WEEDLE},
+	{4, 4, SPECIES_HOOTHOOT},
+	{5, 5, SPECIES_WEEDLE},
+	{5, 5, SPECIES_SPINARAK},
+	{6, 6, SPECIES_WEEDLE},
+	{6, 6, SPECIES_SPINARAK},
+};
+
+static const struct WildPokemonInfo gRoute2_LandMonsInfoNight = {21, gRoute2_LandMonsNight};
+
+
+
+static const struct WildPokemon gRoute22_LandMonsNight[] =
+{
+	{3, 3, SPECIES_RATTATA},
+	{4, 4, SPECIES_RATTATA},
+	{3, 3, SPECIES_RATTATA},
+	{3, 3, SPECIES_RATTATA},
+	{4, 4, SPECIES_RATTATA},
+	{3, 3, SPECIES_MURKROW},
+	{5, 5, SPECIES_RATTATA},
+	{4, 4, SPECIES_MURKROW},
+	{3, 3, SPECIES_MURKROW},
+	{4, 4, SPECIES_PONYTA},
+	{5, 5, SPECIES_MURKROW},
+	{5, 5, SPECIES_PONYTA},
+};
+
+static const struct WildPokemonInfo gRoute22_LandMonsInfoNight = {21, gRoute22_LandMonsNight};
+
 const struct WildPokemonHeader gWildMonMorningHeaders[] =
 {
 	{
@@ -46,6 +102,30 @@ const struct WildPokemonHeader gWildMonEveningHeaders[] =
 const struct WildPokemonHeader gWildMonNightHeaders[] =
 {
 	{
+		.mapGroup = MAP_GROUP(ROUTE_1),
+		.mapNum = MAP_NUM(ROUTE_1),
+		.landMonsInfo = &gRoute1_LandMonsInfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_2),
+		.mapNum = MAP_NUM(ROUTE_2),
+		.landMonsInfo = &gRoute2_LandMonsInfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
+		.mapGroup = MAP_GROUP(ROUTE_22),
+		.mapNum = MAP_NUM(ROUTE_22),
+		.landMonsInfo = &gRoute22_LandMonsInfoNight,
+		.waterMonsInfo = NULL,
+		.rockSmashMonsInfo = NULL,
+		.fishingMonsInfo = NULL,
+	},
+	{
 		.mapGroup = 0xFF,
 		.mapNum = 0xFF,
 		.landMonsInfo = NULL,
@@ -62,6 +142,8 @@ const struct SwarmData gSwarmTable[] =
 		.species = 0xFFFF,
 	},*/
 };
+
+
 
 #else //Below is for Pokemon Unbound. Feel free to remove.
 
