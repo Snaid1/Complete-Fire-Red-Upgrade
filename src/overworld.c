@@ -2374,13 +2374,13 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 				return EventScript_CannotUseWaterfall;
 		}
 	}
-	else if (IsPlayerFacingRockClimbableWall())
+	/*else if (IsPlayerFacingRockClimbableWall())
 	{
 		if (HasBadgeToUseRockClimb()
 		&& (!gFollowerState.inProgress || gFollowerState.flags & FOLLOWER_FLAG_CAN_ROCK_CLIMB))
 		{
 			#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-			item = ITEM_HM08_ROCK_CLIMB;
+			item = ITEM_HM09_ROCK_CLIMB;
 			#endif
 
 			u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_ROCKCLIMB, item, 0);
@@ -2392,7 +2392,7 @@ const u8* GetInteractedWaterScript(unusedArg u32 unused1, u8 metatileBehavior, u
 		}
 
 		return EventScript_JustRockWall;
-	}
+	}*/
 	return NULL;
 }
 
@@ -2415,7 +2415,7 @@ bool8 TrySetupDiveDownScript(void)
 	{
 		u16 item = ITEM_NONE;
 		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
+		item = ITEM_HM08_DIVE;
 		#endif
 
 		u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_DIVE, item, SHOULD_BE_SURFING);
@@ -2442,7 +2442,7 @@ bool8 TrySetupDiveEmergeScript(void)
 	{
 		u16 item = ITEM_NONE;
 		#ifdef ONLY_CHECK_ITEM_FOR_HM_USAGE
-		item = ITEM_HM05_DIVE;
+		item = ITEM_HM08_DIVE;
 		#endif
 
 		u8 partyId = PartyHasMonWithFieldMovePotential(MOVE_DIVE, item, 0);
